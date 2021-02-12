@@ -20,7 +20,6 @@ public:
 	void setName(string name);
 	void setAge(int age);
 	//Pure Virtuals
-	virtual void DisplayInfo() = 0;
 	virtual float getHoursSpent() = 0;
 	virtual StudentType GetStudentType() = 0;
 	virtual StreamingService GetStreamingService() = 0;
@@ -59,11 +58,6 @@ public:
 	void setHoursSpent(float hours);
 	void setStudentType(StudentType type);
 	//Overrides
-	void DisplayInfo() override
-	{
-		cout << "Name: " << getName() << " | Age: " << getAge() << " | College & Program: " << getCollegeName() << " | "
-			<< getProgramName();
-	}
 	float getHoursSpent() override
 	{
 		return m_hoursSpent;
@@ -108,15 +102,7 @@ public:
 	~NonGamingStudent() = default;
 
 	void setStreamingService(StreamingService name);
-
-	void DisplayInfo() override
-	{
-		cout << "Name: " << getName() << " | Age: " << getAge() << " | College & Program: " << getCollegeName() << " | "
-			<< getProgramName() << "\nStreaming Platform: " << m_streaming[GetStreamingService()] << " | Time spent Streaming: " << getHoursSpent() << " hours\n\n";
-	}
-
 private:
-	string m_streaming[5] = { "Netflix", "Disney+", "YouTube", "TikTok", "Hulu" };
 };
 
 //GamingStudent class
@@ -140,13 +126,5 @@ public:
 	~GamingStudent() = default;
 
 	void setGamingPlatform(GamingPlatform name);
-
-	void DisplayInfo() override
-	{
-		cout << "Name: " << getName() << " | Age: " << getAge() << " | College & Program: " << getCollegeName() << " | "
-			<< getProgramName() << "\nGaming Platform: " << m_gaming[GetGamingPlatform()] << " | Time spent Gaming: " << getHoursSpent() << " hours\n\n";
-	}
-
 private:
-	string m_gaming[4] = { "Xbox One X", "Playstation 4", "Nintendo Switch", "PC" };
 };
