@@ -47,16 +47,16 @@ public:
 	}
 
 	~Student() = default;
-	//Getters
-	string getCollegeName() const;
-	string getProgramName() const;
-	int getCurrentSemster() const;
 	//Setters
 	void setCollegeName(string name);
 	void setProgramName(string name);
 	void setCurrentSemster(int semester);
 	void setHoursSpent(float hours);
 	void setStudentType(StudentType type);
+	//Getters
+	string getCollegeName() const;
+	string getProgramName() const;
+	int getCurrentSemster() const;
 	//Overrides
 	float getHoursSpent() override
 	{
@@ -98,9 +98,8 @@ public:
 		setHoursSpent(a_hoursSpent);
 		setStudentType(NONGAMINGSTUDENT);
 	}
-
 	~NonGamingStudent() = default;
-
+	//Setters
 	void setStreamingService(StreamingService name);
 private:
 };
@@ -124,7 +123,7 @@ public:
 	}
 
 	~GamingStudent() = default;
-
+	//Setters
 	void setGamingPlatform(GamingPlatform name);
 private:
 };
